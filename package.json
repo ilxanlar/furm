@@ -1,0 +1,59 @@
+{
+  "name": "furm",
+  "version": "0.1.0",
+  "description": "Easy forms in React using hooks!",
+  "main": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilxanlar/furm.git"
+  },
+  "keywords": [
+    "furm",
+    "react",
+    "hook",
+    "form"
+  ],
+  "scripts": {
+    "build": "rm -rf es && ./node_modules/.bin/babel src -d es",
+    "format": "prettier --single-quote --write \"src/**/*.js\"",
+    "prepublish": "yarn build",
+    "test": "jest"
+  },
+  "author": "Mehdi Namvar",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "7.7.7",
+    "@babel/core": "7.7.7",
+    "@babel/plugin-transform-modules-umd": "7.7.4",
+    "@babel/plugin-transform-runtime": "7.7.6",
+    "@babel/preset-env": "7.7.7",
+    "@babel/preset-react": "7.7.4",
+    "@testing-library/react-hooks": "^3.2.1",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "8.0.6",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "prettier": "1.19.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-hooks-testing-library": "0.6.0",
+    "react-test-renderer": "^16.12.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
